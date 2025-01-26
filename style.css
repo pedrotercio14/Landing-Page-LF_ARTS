@@ -1,0 +1,1183 @@
+/* =================== RESET DE ESTILO =================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    scroll-behavior: smooth;
+}
+
+/* =================== HEADER =================== */
+header {
+    background: #333; /* Cor sólida uniforme */
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff; /* Texto branco */
+    animation: fadeInUp 1s ease-out; /* Aplica a animação */
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+header p {
+    font-size: 1.4rem;
+    color: #ddd; /* Cinza claro */
+    line-height: 1.6;
+    animation: fadeInUp 1.5s ease-out; /* Aplica a animação */
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sutil sombra no texto */
+}
+
+header h1::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #ff0000; /* Detalhe moderno com vermelho */
+    display: block;
+    margin: 0.5rem auto 0; /* Centraliza a linha abaixo do título */
+    border-radius: 2px;
+}
+
+
+/* =================== BOTÃO ENTRAR EM CONTATO =================== */
+a.btn-cta {
+    display: inline-block;
+    background-color: #ff0000; /* Vermelho vibrante */
+    color: #fff !important; /* Texto branco forçado */
+    padding: 12px 26px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+a.btn-cta:hover {
+    background-color: #ff4d4d; /* Vermelho mais claro ao passar o mouse */
+    transform: scale(1.05); /* Leve zoom */
+    color: #fff !important; /* Garante que o texto continua branco */
+}
+
+
+/* =================== NAVEGAÇÃO =================== */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    background: #333; /* Cor escura */
+    padding: 1.2rem 0;
+    margin: 0;
+    list-style: none;
+    animation: fadeInUp 1s ease-out; /* Aplica a animação ao menu inteiro */
+}
+
+nav ul li {
+    margin: 0 1rem;
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeInUp 0.8s ease-out forwards; /* Animação para cada item */
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.2s; }
+nav ul li:nth-child(2) { animation-delay: 0.4s; }
+nav ul li:nth-child(3) { animation-delay: 0.6s; }
+nav ul li:nth-child(4) { animation-delay: 0.8s; }
+
+nav ul li a {
+    color: #fff; /* Texto branco */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #ff4d4d; /* Cor vermelha ao passar o mouse */
+    transform: scale(1.1); /* Leve zoom */
+}
+
+/* =================== SEÇÃO DE VÍDEO =================== */
+.video-section {
+    width: 100%;
+    height: 100vh; /* Ocupa a altura total da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que os vídeos não "vazem" */
+    position: relative;
+    background: #000; /* Fundo preto neutro */
+    padding: 1rem; /* Adiciona um espaçamento interno */
+}
+
+.video-carousel {
+    display: flex;
+    width: 75%; /* Preenche 100% da largura da tela */
+    max-width: 1200px; /* Define uma largura máxima para o carrossel */
+    height: auto; /* Altura será ajustada automaticamente */
+    justify-content: space-between; /* Espaçamento uniforme entre os vídeos */
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os vídeos */
+}
+
+.video-carousel video {
+    width: 80%; /* Cada vídeo ocupa 48% da largura disponível */
+    height: auto; /* Mantém a proporção dos vídeos */
+    object-fit: contain; /* Garante que o vídeo seja exibido por completo sem cortes */
+    border-radius: 8px; /* Suaviza os cantos dos vídeos */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Adiciona sombra mais destacada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave no hover */
+}
+
+.video-carousel video:hover {
+    transform: scale(1.05); /* Leve zoom no hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8); /* Sombra mais intensa no hover */
+}
+
+/* =================== Responsividade =================== */
+@media (max-width: 768px) {
+    .video-carousel {
+        flex-direction: column; /* Empilha os vídeos verticalmente em telas menores */
+        gap: 20px; /* Aumenta o espaço entre os vídeos */
+    }
+    .video-carousel video {
+        width: 100%; /* Cada vídeo ocupa toda a largura disponível */
+        height: auto; /* Mantém a proporção */
+    }
+}
+
+
+/* =================== SEÇÃO DE SOBRE =================== */
+
+/* Container do About */
+.about-container {
+    display: flex;
+    flex-direction: column; /* Alinha foto e conteúdo em coluna para telas menores */
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Espaçamento entre foto e conteúdo */
+    padding: 5rem 2rem;
+    background-color: #f9f9f9; /* Fundo claro e moderno */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para o container */
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Foto do Artista */
+.about-photo img {
+    width: 350px; /* Tamanho maior da foto */
+    height: 350px;
+    border-radius: 50%; /* Bordas arredondadas para um efeito mais moderno */
+    object-fit: cover; /* Mantém a proporção */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra leve para destacar a imagem */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; /* Transição suave */
+}
+
+/* Efeito hover para a foto */
+.about-photo img:hover {
+    transform: scale(1.1); /* Aumenta a imagem levemente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+}
+
+/* Conteúdo do About */
+.about-content {
+    max-width: 600px;
+    text-align: center; /* Centraliza o conteúdo */
+    margin-top: 20px;
+}
+
+/* Título do About */
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: relative;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Linha abaixo do título */
+.about-content h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #e63946; /* Linha vermelha abaixo do título */
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Descrição do Artista */
+.about-content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* =================== CSS Instagram =================== */
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #e63946;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Ícone do Instagram */
+.instagram-link img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover no link do Instagram */
+.instagram-link:hover {
+    transform: scale(1.05);
+    color: #d62828;
+}
+
+/* Efeito no ícone do Instagram */
+.instagram-link img:hover {
+    transform: scale(1.2);
+}
+
+/* =================== CSS Email =================== */
+.email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #e63946;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Ícone do e-mail */
+.email-link img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover no link de email */
+.email-link:hover {
+    transform: scale(1.05);
+    color: #d62828;
+}
+
+/* Efeito no ícone de email */
+.email-link:hover img {
+    transform: scale(1.2);
+}
+
+/* =================== ANIMAÇÃO DO TÍTULO =================== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Começa deslocado para baixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Fica na posição original */
+    }
+}
+
+/* =================== SEÇÃO DE SERVIÇOS =================== */
+
+/* Estilo da seção geral */
+.services {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom right, #fdfdfd, #f6f6f6); /* Fundo suave */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra refinada */
+    text-align: center;
+}
+
+/* Estilo dos cartões */
+.service-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos dos cartões */
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Descrição do serviço */
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Links de plataformas */
+.art-platforms ul,
+.music-platforms ul {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Ícones das redes sociais */
+.art-platforms ul li a,
+.music-platforms ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #f3f3f3;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: #333;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.art-platforms ul li a:hover,
+.music-platforms ul li a:hover {
+    background: #e63946;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+
+
+/* =================== SEÇÃO DE CONTATO =================== */
+.contact {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.artist-photo {
+    margin-bottom: 2rem;
+}
+
+.artist-photo img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.artist-photo img:hover {
+    transform: scale(1.05);
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-icons a img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-icons a:hover {
+    color: #e63946;
+}
+
+.contact-icons a img:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* =================== SEÇÃO DE PORTFÓLIO =================== */
+.portfolio {
+    padding: 3rem 1.5rem;
+    background-color: #f9f9f9; /* Fundo neutro */
+    text-align: center;
+    position: relative;
+}
+
+.portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333; /* Cor neutra e moderna */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Esconde os slides fora da visualização */
+    padding: 1rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 8px; /* Espaço entre os slides */
+    transition: transform 0.5s ease-in-out; /* Animação suave ao mover slides */
+}
+
+/* Imagens */
+.carousel-track img {
+    width: 100%;
+    max-width: 300px; /* Define largura máxima das imagens */
+    height: auto; /* Mantém proporção das imagens */
+    border-radius: 8px; /* Bordas arredondadas para suavizar o visual */
+    object-fit: cover; /* Garante que as imagens sejam exibidas por completo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para destaque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.05); /* Leve ampliação ao passar o mouse */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Destaque maior ao hover */
+}
+
+/* =================== RESPONSIVIDADE =================== */
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 2rem 1rem;
+    }
+
+    .portfolio h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-track img {
+        max-width: 200px; /* Reduz a largura em dispositivos menores */
+        height: auto;
+    }
+}
+
+
+/* =================== VARIÁVEIS GERAIS =================== */
+:root {
+    --cor-primaria: #e63946;
+    --cor-secundaria: #111;
+    --cor-texto: #ddd;
+    --cor-fundo: #2b2b2b;
+    --cor-hover: #fff;
+    --transicao: 0.3s ease;
+}
+
+/* =================== RODAPÉ =================== */
+.footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 2rem 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que colunas quebrem para a linha abaixo */
+    gap: 2rem;
+    padding-bottom: 1.5rem;
+    /* Removida a linha inferior */
+    border-bottom: none; 
+}
+
+.footer-column {
+    flex: 1;
+    text-align: center;
+    min-width: 250px; /* Garantia de largura mínima */
+}
+
+.footer-column h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--cor-primaria);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn var(--transicao) forwards;
+}
+
+.footer-column ul li:nth-child(1) { animation-delay: 0.2s; }
+.footer-column ul li:nth-child(2) { animation-delay: 0.4s; }
+.footer-column ul li:nth-child(3) { animation-delay: 0.6s; }
+
+.footer-column ul li a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color var(--transicao);
+}
+
+.footer-column ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor-primaria);
+    transition: width var(--transicao);
+}
+
+.footer-column ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+.footer-column ul li a:hover::after {
+    width: 100%;
+}
+
+/* =================== ÍCONES SOCIAIS =================== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--cor-hover);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.social-icons a img {
+    width: 50%;
+    height: auto;
+}
+
+.social-icons a:hover {
+    background-color: var(--cor-primaria);
+    transform: scale(1.1);
+}
+
+/* =================== DESENVOLVEDOR =================== */
+.developer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 1rem;
+    background-color: var(--cor-fundo); /* Fundo para contraste */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: none; /* Remove sombra */
+}
+
+.developer-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: none;
+    transition: transform var(--transicao);
+}
+
+.developer-photo:hover {
+    transform: scale(1.1); /* Zoom no hover */
+}
+
+/* Links de Contato (apenas ícones) */
+.contact-links {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 15px; /* Espaçamento entre os ícones */
+    margin-top: 1rem;
+}
+
+.contact-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Largura do ícone */
+    height: 50px; /* Altura do ícone */
+    border-radius: 50%;
+    background-color: var(--cor-hover); /* Fundo branco */
+    transition: background-color var(--transicao), transform var(--transicao);
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.contact-links a img {
+    width: 60%; /* Ajusta o tamanho do ícone */
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%); /* Ícones em preto e branco */
+    transition: filter var(--transicao), transform var(--transicao);
+}
+
+.contact-links a:hover {
+    background-color: var(--cor-primaria); /* Cor de fundo no hover */
+    transform: scale(1.1); /* Zoom no hover */
+}
+
+.contact-links a:hover img {
+    filter: none; /* Remove o filtro de cinza no hover */
+    transform: scale(1.2); /* Aumenta o ícone */
+}
+
+/* =================== RESPONSIVIDADE =================== */
+@media (max-width: 768px) {
+    .contact-links {
+        gap: 10px; /* Reduz o espaçamento em telas menores */
+    }
+
+    .contact-links a {
+        width: 40px; /* Reduz o tamanho dos ícones */
+        height: 40px;
+    }
+
+    .contact-links a img {
+        width: 50%; /* Ajusta o tamanho dos ícones */
+    }
+}
+
+
+
+/* =================== RODAPÉ INFERIOR =================== */
+.footer-bottom {
+    display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 1rem 2rem;
+    background-color: #111; /* Fundo escuro para contraste */
+    color: #fff; /* Texto branco */
+    font-size: 0.9rem; /* Tamanho de texto menor */
+    gap: 1rem; /* Espaçamento entre os itens */
+    /* Removido: border-top */
+}
+
+.footer-bottom .footer-left,
+.footer-bottom .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre o texto e o ícone */
+    justify-content: center; /* Centraliza o texto e ícone */
+}
+
+.footer-bottom img {
+    width: 16px; /* Largura das imagens */
+    height: 16px; /* Altura das imagens */
+    object-fit: contain;
+    vertical-align: middle; /* Alinha as imagens com o texto */
+}
+
+.footer-bottom span {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre texto e ícone */
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    color: #ddd; /* Texto em tom suave */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer-bottom span img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animação suave no hover */
+}
+
+.footer-bottom span:hover img {
+    transform: scale(1.1); /* Leve aumento no hover */
+    filter: brightness(1.5); /* Aumenta o brilho do ícone */
+}
+
+
+
+
+/* =================== ANIMAÇÕES =================== */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes hover-pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =================== ANIMAÇÃO FADE-IN MODERNA =================== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Começa deslocado para baixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Fica na posição original */
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Começa deslocado para baixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Fica na posição original */
+    }
+}
+
+/* Keyframes da Animação */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move para a posição final */
+    }
+}
+
+@keyframes slideVideo {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%); /* Move a largura de um vídeo */
+    }
+    100% {
+        transform: translateX(0); /* Retorna ao início */
+    }
+}
+
+/* Animações Personalizadas */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =================== RESPONSIVIDADE =================== */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-buttons {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .portfolio {
+        padding: 5px;
+    }
+
+    .carousel-track img {
+        height: 200px;
+    }
+
+    .video-section video {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-buttons {
+        font-size: 14px;
+        padding: 3px;
+    }
+
+    .carousel-track img {
+        height: 150px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* =================== RESPONSIVIDADE =================== */
+
+/* Responsividade para tablets (telas menores que 768px) */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio h2 {
+        font-size: 2rem;
+    }
+
+    .portfolio {
+        padding: 2rem 1rem;
+    }
+
+    .carousel img {
+        height: 200px;
+    }
+
+    .carousel-buttons {
+        font-size: 1.5rem;
+    }
+
+    .services .service div {
+        min-width: 200px;
+    }
+
+    .video-carousel video {
+        height: 60vh;
+    }
+
+    /* Footer Container */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 15px;
+    }
+
+    .social-icons a {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-left span, 
+    .footer-right span {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px; 
+    }
+
+    .footer-left img, 
+    .footer-right img {
+        width: 18px; 
+        height: 18px; 
+        margin-bottom: 5px; 
+    }
+
+    .developer-info {
+        align-items: center;
+    }
+
+    .developer-photo {
+        width: 120px; 
+        height: 120px; 
+    }
+
+    .contact-links a {
+        font-size: 0.9rem; 
+    }
+
+    .contact-links .icon {
+        width: 24px; 
+        height: 24px; 
+    }
+}
+
+/* Responsividade para celulares (telas menores que 480px) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .video-carousel video {
+        height: 50vh;
+    }
+
+    .services .service div {
+        min-width: 150px;
+    }
+
+    .portfolio h2 {
+        font-size: 1.8rem;
+    }
+
+    .portfolio {
+        padding: 1rem 0.5rem;
+    }
+
+    .carousel img {
+        height: 150px;
+    }
+
+    .carousel-buttons {
+        font-size: 1.2rem;
+        padding: 0.4rem;
+    }
+
+    /* Footer Container */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-column {
+        margin-bottom: 10px;
+    }
+
+    .social-icons a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem;
+        text-align: center;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .footer-left span, 
+    .footer-right span {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px; 
+    }
+
+    .footer-left img, 
+    .footer-right img {
+        width: 16px; 
+        height: 16px; 
+    }
+
+    .developer-info {
+        align-items: center;
+    }
+
+    .developer-photo {
+        width: 100px; 
+        height: 100px; 
+    }
+
+    .contact-links a {
+        font-size: 0.85rem; 
+    }
+
+    .contact-links .icon {
+        width: 20px; 
+        height: 20px; 
+    }
+}
+
+/* =================== RESPONSIVIDADE PARA TABLETS =================== */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Muda para coluna */
+        align-items: center; /* Centraliza os elementos */
+        gap: 30px; /* Reduz o espaçamento */
+        padding: 3rem 1.5rem; /* Reduz padding */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .about-photo img {
+        width: 300px; /* Reduz tamanho da foto */
+        height: 300px;
+    }
+
+    .about-content {
+        max-width: 100%; /* Texto ocupa largura total */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .about-content h2 {
+        font-size: 2rem; /* Reduz tamanho do título */
+    }
+
+    .about-content p {
+        font-size: 1rem; /* Reduz tamanho do parágrafo */
+    }
+
+    .instagram-link, 
+    .email-link {
+        font-size: 1rem; /* Reduz tamanho dos links */
+    }
+
+    .instagram-link img,
+    .email-link img {
+        width: 25px; /* Reduz tamanho do ícone */
+        height: 25px;
+    }
+}
+
+/* =================== RESPONSIVIDADE PARA CELULARES =================== */
+@media screen and (max-width: 480px) {
+    .about-container {
+        flex-direction: column; /* Elementos ficam em coluna */
+        gap: 20px; /* Reduz ainda mais o espaçamento */
+        padding: 2rem 1rem; /* Reduz padding */
+        text-align: center; /* Centraliza tudo */
+    }
+
+    .about-photo img {
+        width: 250px; /* Foto menor */
+        height: 250px;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem; /* Título menor */
+    }
+
+    .about-content p {
+        font-size: 0.9rem; /* Parágrafo menor */
+        line-height: 1.6; /* Ajusta espaçamento entre linhas */
+    }
+
+    .instagram-link, 
+    .email-link {
+        font-size: 0.9rem; /* Reduz tamanho dos links */
+    }
+
+    .instagram-link img,
+    .email-link img {
+        width: 20px; /* Ícones menores */
+        height: 20px;
+    }
+}
+
+
+}
